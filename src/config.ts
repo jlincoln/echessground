@@ -5,7 +5,7 @@ import { DrawShape, DrawBrush } from './draw'
 import * as cg from './types'
 
 export interface Config {
-  fen?: cg.FEN; // chess position in Forsyth notation
+  fen?: cg.FEN; // echess position in Forsyth notation
   orientation?: cg.Color; // board orientation. white | black
   turnColor?: cg.Color; // turn to play. white | black
   check?: cg.Color | boolean; // true for current color, false to unset
@@ -14,8 +14,8 @@ export interface Config {
   coordinates?: boolean; // include coords attributes
   autoCastle?: boolean; // immediately complete the castle by moving the rook after king move
   viewOnly?: boolean; // don't bind events: the user will never be able to move pieces around
-  disableContextMenu?: boolean; // because who needs a context menu on a chessboard
-  resizable?: boolean; // listens to chessground.resize on document.body to clear bounds cache
+  disableContextMenu?: boolean; // because who needs a context menu on a echessboard
+  resizable?: boolean; // listens to echessground.resize on document.body to clear bounds cache
   addPieceZIndex?: boolean; // adds z-index values to pieces (for 3D)
   // pieceKey: boolean; // add a data-key attribute to piece elements
   highlight?: {
@@ -57,7 +57,7 @@ export interface Config {
   draggable?: {
     enabled?: boolean; // allow moves & premoves to use drag'n drop
     distance?: number; // minimum distance to initiate a drag; in pixels
-    autoDistance?: boolean; // lets chessground set distance to zero when user drags pieces
+    autoDistance?: boolean; // lets echessground set distance to zero when user drags pieces
     showGhost?: boolean; // show ghost of piece being dragged
     deleteOnDropOff?: boolean; // delete a piece when it is dropped off the board
   };

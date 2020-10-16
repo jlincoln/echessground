@@ -6,7 +6,7 @@ import { Elements } from './types'
 
 export function renderWrap(element: HTMLElement, s: HeadlessState, relative: boolean): Elements {
 
-  // .cg-wrap (element passed to Chessground)
+  // .cg-wrap (element passed to Echessground)
   //   cg-helper (12.5%)
   //     cg-container (800%)
   //       cg-board
@@ -19,7 +19,7 @@ export function renderWrap(element: HTMLElement, s: HeadlessState, relative: boo
 
   // ensure the cg-wrap class is set
   // so bounds calculation can use the CSS width/height values
-  // add that class yourself to the element before calling chessground
+  // add that class yourself to the element before calling echessground
   // for a slight performance improvement! (avoids recomputing style)
   element.classList.add('cg-wrap');
 
