@@ -32,6 +32,11 @@ const rook: Mobility = (x1, y1, x2, y2) => {
   return x1 === x2 || y1 === y2;
 }
 
+export const elephant: Mobility = (x1, y1, x2, y2) => {
+  // TODO: elephant can move to any open square
+  return bishop(x1, y1, x2, y2) || rook(x1, y1, x2, y2) || knight(x1, x2, y1, y2);
+}
+
 export const queen: Mobility = (x1, y1, x2, y2) => {
   return bishop(x1, y1, x2, y2) || rook(x1, y1, x2, y2);
 }
@@ -67,8 +72,10 @@ export function premove(pieces: cg.Pieces, key: cg.Key, canCastle: boolean): cg.
       r === 'knight' ? knight : (
         r === 'bishop' ? bishop : (
           r === 'rook' ? rook : (
-            r === 'queen' ? queen : king(piece.color, rookFilesOf(pieces, piece.color), canCastle)
-          ))));
+            r === 'elephant' ? elephant : (
+              r === 'queen' ? queen :
+                king(piece.color, rookFilesOf(pieces, piece.color), canCastle)
+          )))));
   return util.allPos.filter(pos2 =>
     (pos[0] !== pos2[0] || pos[1] !== pos2[1]) && mobility(pos[0], pos[1], pos2[0], pos2[1])
   ).map(util.pos2key);
