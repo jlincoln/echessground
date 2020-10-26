@@ -1,6 +1,6 @@
 {
   "name": "echessground",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "echess ui",
   "type": "commonjs",
   "main": "echessground.js",
